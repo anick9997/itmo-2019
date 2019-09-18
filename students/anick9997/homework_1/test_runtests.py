@@ -8,7 +8,8 @@ class TestRuntests(unittest.TestCase):
             find_tests("C:/I/do/not/exist")
 
     def test_run_tests(self):
-        self.assertFalse(run_tests([]))
+        with self.assertRaises(ValueError):
+            run_tests([])
 
 
 # if __name__ == '__main__':

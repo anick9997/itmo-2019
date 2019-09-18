@@ -7,14 +7,12 @@ def find_tests(path):
     if os.path.exists(path):
         return glob.glob(f'{path}/test_*.py')
     else:
-        print('Path does not exist')
-        raise ValueError
+        raise ValueError('Path does not exist')
 
 
 def run_tests(tests):
     if not tests:
-        print('No tests in given directory')
-        return False
+        raise ValueError('No tests in given directory')
     else:
         for test in tests:
             try:
